@@ -36,10 +36,10 @@ import("stdfaust.lib");
 // * `MaxDelay`: maximum allowable delay in samples (buffer size)
 // * `tau1`: initial delay in samples (can be fractional)
 // * `tau2`: target delay in samples (can be fractional)
-// * `alpha`: interpolation factor between tau1 and tau2 (0 = tau1, 1 = tau2)
+// * `alpha`: interpolation factor between tau1 and tau2 (in [0,1] with 0 = tau1, 1 = tau2)
 //
 // #### Reference
-//   - T. Carpentier, "Implémentation de ligne à retard avec délai continûment variable", 2024: <https://hal.science/hal-04535030>
+//   - T. Carpentier, "Implementation of a continuously variable delay line by crossfading between several tap delays", 2024: <https://hal.science/hal-04646939>
 //------------------------------------------------------------
 
 multiTapSincDelay(K, MaxDelay, tau1, tau2, alpha, input) = output with {
